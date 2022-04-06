@@ -1,0 +1,43 @@
+@import "../../styles/globals.module.less";
+
+.popover {
+  position: relative;
+  width: 336px;
+  height: 400px;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.noticeButton {
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.icon {
+  padding: 4px;
+  color: white;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.badge {
+  font-size: 16px;
+}
+
+.tabs {
+  :global {
+    .ant-tabs-nav-list {
+      margin: auto;
+    }
+
+    .ant-tabs-nav-scroll {
+      text-align: center;
+    }
+    .ant-tabs-bar {
+      margin-bottom: 0;
+    }
+  }
+}
