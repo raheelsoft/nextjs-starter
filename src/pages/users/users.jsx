@@ -23,11 +23,12 @@ const Users = ({
     dispatch(actions.fetchUsersRequest({ userUrl: "users" }));
   }, []);
 
+
   return (
     <Spin spinning={loading}>
       {users?.map((item, index) => (
         <Text style={{ display: "block" }} key={item?.id}>
-          {`${index} - ${item?.title}`}
+          {`${index} - ${item?.name}`}
         </Text>
       ))}
     </Spin>

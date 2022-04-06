@@ -29,7 +29,7 @@ const withApis = (WrappedComponent) => {
 
     useEffect(() => {
       if (users) {
-        dispatch(actions.fetchPostsSuccess(posts));
+        dispatch(actions.fetchUsersSuccess(users));
       }
     }, [users]);
 

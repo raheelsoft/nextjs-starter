@@ -12,6 +12,7 @@ const reducer = produce((draft, action) => {
     case constants.FETCH_USERS_REQUEST:
       draft.userUrl = action?.params?.userUrl;
       draft.users = [];
+      break;
     case constants.FETCH_USERS_SUCCESS:
       draft.userUrl = null;
       draft.users = action?.payload || [];
