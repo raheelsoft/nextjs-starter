@@ -7,7 +7,9 @@ import withApis from "./withApis";
 const { Text } = Typography;
 
 const stateSelectors = {
-  users: selectors.usersStateSelector,
+  users:{
+    otherStates: ["userUrl"],
+    selectors: selectors.usersStateSelector},
 };
 
 const Users = ({

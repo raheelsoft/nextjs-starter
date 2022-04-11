@@ -7,7 +7,9 @@ import * as selectors from "./selectors";
 
 const withApis = (WrappedComponent) => {
   const stateSelectors = {
-    userUrl: selectors.userUrlStateSelector,
+    userUrl: {
+      selectors: selectors.userUrlStateSelector,
+    },
   };
   const WithApis = (props) => {
     const { localStateSelector, dispatch } = useContext(localContext);

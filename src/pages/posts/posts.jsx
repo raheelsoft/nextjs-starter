@@ -7,7 +7,7 @@ import withApis from "./withApis";
 const { Text } = Typography;
 
 const stateSelectors = {
-  posts: selectors.postsStateSelector,
+  posts: {selectors:selectors.postsStateSelector},
 };
 
 const Posts = ({

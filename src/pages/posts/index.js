@@ -9,7 +9,15 @@ const LocalContext = () => {
   const localStateSelector = (callbacks) => {
     const states = {};
     Object.keys(callbacks)?.forEach((item) => {
-      states[item] = callbacks?.[item]?.(state[item]);
+      const result = {};
+      if (callbacks?.[item]?.otherStates) {
+        callbacks?.[item]?.otherStates?.forEach((otherStatesItem) => {
+          result[otherStatesItem] = state?.[otherStatesItem];
+        });
+        states[item] = callbacks?.[item]?.selectors?.(result);
+      }
+      result[item] = state[item];
+      states[item] = callbacks?.[item]?.selectors?.(result);
     });
     return states;
   };

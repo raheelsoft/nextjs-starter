@@ -8,8 +8,16 @@ const LocalContext = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const localStateSelector = (callbacks) => {
     const states = {};
+    const result = {};
     Object.keys(callbacks)?.forEach((item) => {
-      states[item] = callbacks?.[item]?.(state[item]);
+      if (callbacks?.[item]?.otherStates) {
+        callbacks?.[item]?.otherStates?.forEach((otherStatesItem) => {
+          result[otherStatesItem] = state?.[otherStatesItem];
+        });
+      }
+      result[item] = state[item];
+      states[item] = callbacks?.[item]?.selectors?.(result);
+      console.log(states, "states");
     });
     return states;
   };

@@ -1,3 +1,3 @@
-export const postsStateSelector = (posts) => posts;
+export const postsStateSelector = ({ posts }) => posts;
 
-export const postUrlStateSelector = (postUrl) => postUrl;
+export const postUrlStateSelector = ({ postUrl }) => postUrl;

@@ -42,6 +42,7 @@ const reducer = produce((draft, action) => {
     case constants.LOGOUT:
       local.clearStorage();
       Router.push("login");
+      break;
     default:
       draft.state = initialState;
       break;
