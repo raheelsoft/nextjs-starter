@@ -1,6 +1,6 @@
 import { createContext, useReducer } from "react";
 import reducer, { initialState } from "./reducer";
-import Users from "./users";
+import Posts from "./posts";
 
 export const localContext = createContext();
 
@@ -23,7 +23,7 @@ const LocalContext = () => {
 
   return (
     <localContext.Provider value={{ localStateSelector, dispatch }}>
-      <Users />
+      <Posts />
     </localContext.Provider>
   );
 };

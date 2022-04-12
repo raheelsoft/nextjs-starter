@@ -1,10 +1,7 @@
 import Head from "next/head";
-import MyLayout from "../components/layout";
 // import styles from "../styles/Home.module.css";
-import MainContext from "../context";
 import Posts from "./posts";
-import Users from "./users";
-import * as globalConstants from "../utils/constants";
+// import * as globalConstants from "../utils/constants";
 
 const Home = () => {
   // (() => {
