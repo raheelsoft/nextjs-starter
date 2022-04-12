@@ -8,7 +8,7 @@ import * as selectors from "./selectors";
 const withApis = (WrappedComponent) => {
   const stateSelectors = {
     userUrl: {
-      selectors: selectors.userUrlStateSelector,
+      selector: selectors.userUrlStateSelector,
     },
   };
   const WithApis = (props) => {

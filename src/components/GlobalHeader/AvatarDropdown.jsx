@@ -13,9 +13,11 @@ import avatar from "../../../public/avatar.png";
 // import { userRoles } from "@/models/constants";
 import NoticeIconView from "./NoticeIconView";
 import * as selectors from "../../context/globalSelectors";
+
 const globalStateSelectors = {
-  currentUser: selectors.currentUserStateSelector,
+  currentUser: {selector:selectors.currentUserStateSelector},
 };
+
 const AvatarDropdown = (props) => {
   const { globalStateSelector, globalDispatch } = useContext(globalContext);
   const { currentUser } = globalStateSelector(globalStateSelectors);

@@ -16,8 +16,7 @@ const LocalContext = () => {
         });
       }
       result[item] = state[item];
-      states[item] = callbacks?.[item]?.selectors?.(result);
-      console.log(states, "states");
+      states[item] = callbacks?.[item]?.selector?.(result);
     });
     return states;
   };

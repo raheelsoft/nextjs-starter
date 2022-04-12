@@ -9,7 +9,7 @@ const { Text } = Typography;
 const stateSelectors = {
   users:{
     otherStates: ["userUrl"],
-    selectors: selectors.usersStateSelector},
+    selector: selectors.usersStateSelector},
 };
 
 const Users = ({

@@ -8,7 +8,13 @@ const GlobalContext = ({ children }) => {
   const globalStateSelector = (callbacks) => {
     const states = {};
     Object.keys(callbacks)?.forEach((item) => {
-      states[item] = callbacks[item](state[item]);
+      if (callbacks?.[item]?.otherStates) {
+        callbacks?.[item]?.otherStates?.forEach((otherStatesItem) => {
+          result[otherStatesItem] = state?.[otherStatesItem];
+        });
+      }
+      result[item] = state[item];
+      states[item] = callbacks?.[item]?.selector?.(result);
     });
     return states;
   };
